@@ -1,0 +1,11 @@
+Client
+  |
+  |  (API Key required)
+  v
+Kong Gateway
+  |
+  v
+Service
+  |
+  v
+Pods
