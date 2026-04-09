@@ -45,5 +45,5 @@ If violated:--->  Request must be denied.  No Lizzo banana for YOU!
 
 Stage 1: Service Deployment
 
-falcon: https://github.com/BalericaAI/kubernetesclass/blob/main/Project8_OPA_Kong/falcon.yaml
+falcon: https://github.com/BalericaAI/kubernetesclass/blob/main/Project8_OPA_Kong/yaml/falcon.yaml
 lindworm: 
