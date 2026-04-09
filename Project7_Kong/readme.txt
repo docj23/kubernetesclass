@@ -105,6 +105,20 @@ Now make them exceed the cap.
 Simple bash loop
 
 Without auth: https://github.com/BalericaAI/kubernetesclass/blob/main/Project7_Kong/bash/simpleloop.sh
-With auth: 
+With auth: https://github.com/BalericaAI/kubernetesclass/blob/main/Project7_Kong/bash/keyloop.sh
+
+Apply
+
+        ./simpleloop.sh
+        ./keyloop.sh
+
+What happens?
+
+Phase 6 — Use k6 for a Realer Flood
+
+k6 is an open-source load-testing tool designed for running scripted HTTP load tests, and its docs walk through writing a simple test script and running it locally.
+
+rate-test.js
+key_rate-test.js
 
 
