@@ -14,3 +14,8 @@ Phase 1 — Deploy the application
 Use a tiny echo app or hello app.
 
 Example deployment:
+
+Hello App: https://github.com/BalericaAI/kubernetesclass/blob/main/Project5_Kong/yaml/helloapp.yaml
+
+Phase 2 — Create the Service
+
