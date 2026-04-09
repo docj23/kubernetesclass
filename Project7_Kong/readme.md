@@ -122,7 +122,7 @@ key_rate-test.js        https://github.com/BalericaAI/kubernetesclass/blob/main/
 
 Run it!
 
-k6 run rate-test.js
-k6 run key_rate-test.js
+        k6 run rate-test.js
+        k6 run key_rate-test.js
 
 What happens?
