@@ -104,6 +104,7 @@ Now make them exceed the cap.
 
 Simple bash loop
 
-Without auth: 
+Without auth: https://github.com/BalericaAI/kubernetesclass/blob/main/Project7_Kong/bash/simpleloop.sh
+With auth: 
 
 
