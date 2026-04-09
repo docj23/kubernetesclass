@@ -64,7 +64,7 @@ Verify: curl http://<KONG>/hello
 What happened?
 
 Phase 4 — Give Chewbacca Access
-Apply Chewbacca: 
+Apply Chewbacca: https://github.com/BalericaAI/kubernetesclass/blob/main/Project6_Kong/yaml/chewbacca.yaml
 
 kubectl apply -f chewbacca.yaml
 
