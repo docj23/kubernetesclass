@@ -1,0 +1,16 @@
+Client
+  |
+  |  API Key (identity)
+  v
+Kong Gateway
+  |
+  |  Auth Plugin (key-auth)
+  |  (optional rate limiting)
+  v
+Service (falcon / lindworm)
+  |
+  v
+Pods
+  |
+  v
+OPA Sidecar / OPA Service
