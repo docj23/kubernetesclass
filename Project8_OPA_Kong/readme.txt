@@ -43,6 +43,17 @@ Students must enforce:
 
 If violated:--->  Request must be denied.  No Lizzo banana for YOU!
 
+Stage 0: Namespaces
+
+Deploy namespaces.yaml 
+
+Deploy Apps into Correct Namespaces
+
+Falcon Deployment
+Lindworm Deployment
+
+
+
 Stage 1: Service Deployment
 
 falcon: https://github.com/BalericaAI/kubernetesclass/blob/main/Project8_OPA_Kong/yaml/falcon.yaml
