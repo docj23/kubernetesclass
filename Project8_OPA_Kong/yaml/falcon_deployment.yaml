@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: falcon-app
+  namespace: falcon
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: falcon
+  template:
+    metadata:
+      labels:
+        app: falcon
+    spec:
+      containers:
+      - name: falcon
+        image: hashicorp/http-echo
+        args:
+        - "-text=Falcon system online"
+        ports:
+        - containerPort: 12000
