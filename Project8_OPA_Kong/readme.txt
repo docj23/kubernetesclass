@@ -59,7 +59,11 @@ Stage 1: Service Deployment
 falcon: https://github.com/BalericaAI/kubernetesclass/blob/main/Project8_OPA_Kong/yaml/falcon.yaml
 lindworm: https://github.com/BalericaAI/kubernetesclass/blob/main/Project8_OPA_Kong/yaml/lindworm.yaml
 
-Kong Routing Requirement
+Services: https://github.com/BalericaAI/kubernetesclass/blob/main/Project8_OPA_Kong/yaml/services.yaml
+
+
+
+Stage 2 Kong Routing Requirement
 
 Routes must exist:
 
@@ -68,7 +72,7 @@ Routes must exist:
 
 Make Kong USERS!!!
 
-Consumers
+Stage 3 Consumers
         chewbacca
         darth-malgus
 API Keys
@@ -84,7 +88,7 @@ Example expectation:
 Kong---> authentication
 OPA---> authorization decisions
 
-OPA Policy Requirement
+Phase 4 — OPA Gatekeeper Constraints
 
 You must implement:
 
@@ -99,6 +103,8 @@ allow {
   input.user == "darth-malgus"
   input.path == "/lindworm"
 }
+
+
 
 
 
