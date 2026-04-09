@@ -105,7 +105,8 @@ allow {
 }
 
 
-OPA Constraint Template: 
+OPA Constraint Template: https://github.com/BalericaAI/kubernetesclass/blob/main/Project8_OPA_Kong/OPA/opa_constraint_ports.yaml
+OPA Constraint Ports: 
 
 
 
