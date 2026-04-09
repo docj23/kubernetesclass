@@ -1,0 +1,8 @@
+apiVersion: configuration.konghq.com/v1
+kind: KongCredential
+metadata:
+  name: chewbacca
+consumerRef: chewbacca
+type: key-auth
+config:
+  key: super-secret-key
