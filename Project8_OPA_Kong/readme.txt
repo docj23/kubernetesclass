@@ -49,7 +49,7 @@ Deploy namespaces.yaml https://github.com/BalericaAI/kubernetesclass/blob/main/P
 
 Deploy Apps into Correct Namespaces
 
-Falcon Deployment
+Falcon Deployment  https://github.com/BalericaAI/kubernetesclass/blob/main/Project8_OPA_Kong/yaml/falcon_deployment.yaml
 Lindworm Deployment
 
 
