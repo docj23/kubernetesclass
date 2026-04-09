@@ -138,3 +138,8 @@ Test it!!!
 
 curl http://<KONG>/falcon -H "apikey: wookie-power"
 curl http://<KONG>/lindworm -H "apikey: sith-control"
+
+Try this!
+curl http://<KONG>/lindworm -H "apikey: wookie-power"
+
+
