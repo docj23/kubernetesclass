@@ -1,0 +1,119 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ops
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-gate
+  namespace: ops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-gate
+  template:
+    metadata:
+      labels:
+        app: python-gate
+    spec:
+      containers:
+      - name: python-gate
+        image: python:3.11-slim
+        command: ["/bin/sh", "-c"]
+        args:
+        - |
+          pip install fastapi uvicorn httpx && \
+          cat <<'PYEOF' > /app.py
+          from fastapi import FastAPI, Header, HTTPException, Request
+          from fastapi.responses import JSONResponse
+          import httpx
+
+          app = FastAPI(title="Falcon-Lindworm Python Gate")
+
+          ACCESS_RULES = {
+              "wookie-power": {
+                  "user": "chewbacca",
+                  "allowed_app": "falcon",
+                  "allowed_namespace": "falcon",
+                  "allowed_port": 12000,
+                  "backend_url": "http://falcon-service.falcon.svc.cluster.local:12000",
+              },
+              "sith-control": {
+                  "user": "darth-malgus",
+                  "allowed_app": "lindworm",
+                  "allowed_namespace": "lindworm",
+                  "allowed_port": 3653,
+                  "backend_url": "http://lindworm-service.lindworm.svc.cluster.local:3653",
+              },
+          }
+
+          EXPECTED_APPS = {
+              "falcon": {"namespace": "falcon", "port": 12000},
+              "lindworm": {"namespace": "lindworm", "port": 3653},
+          }
+
+          def validate_request(app_name: str, api_key: str):
+              if api_key not in ACCESS_RULES:
+                  raise HTTPException(status_code=401, detail="Invalid API key")
+
+              identity = ACCESS_RULES[api_key]
+              expected = EXPECTED_APPS.get(app_name)
+
+              if not expected:
+                  raise HTTPException(status_code=404, detail="Unknown application")
+
+              if identity["allowed_app"] != app_name:
+                  raise HTTPException(
+                      status_code=403,
+                      detail=f"User {identity['user']} is not allowed to access {app_name}",
+                  )
+
+              if identity["allowed_namespace"] != expected["namespace"]:
+                  raise HTTPException(status_code=403, detail="Namespace policy violation")
+
+              if identity["allowed_port"] != expected["port"]:
+                  raise HTTPException(status_code=403, detail="Port policy violation")
+
+              return identity
+
+          @app.get("/gate/{app_name}")
+          async def gate(app_name: str, request: Request, apikey: str = Header(default="")):
+              identity = validate_request(app_name, apikey)
+              backend_url = ACCESS_RULES[apikey]["backend_url"]
+
+              try:
+                  async with httpx.AsyncClient(timeout=5.0) as client:
+                      resp = await client.get(backend_url)
+              except Exception as exc:
+                  raise HTTPException(status_code=502, detail=f"Backend unreachable: {exc}")
+
+              return JSONResponse(
+                  status_code=200,
+                  content={
+                      "message": "Access granted",
+                      "user": identity["user"],
+                      "app": app_name,
+                      "backend_status": resp.status_code,
+                      "backend_response": resp.text,
+                      "career_relevance": "This is a simple policy enforcement point written in Python.",
+                      "why_this_pleases_darth_malgus": "Because weak routing has been replaced with judgment."
+                  },
+              )
+          PYEOF
+          uvicorn app:app --host 0.0.0.0 --port 8080
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: python-gate-service
+  namespace: ops
+spec:
+  selector:
+    app: python-gate
+  ports:
+  - port: 8080
+    targetPort: 8080
