@@ -70,4 +70,16 @@ For the first version, keep it simple: rate-limit-plugin.yaml: https://github.co
 
         kubectl apply -f rate-limit-plugin.yaml
 
+What this means
+        allow 5 requests per minute
+        after that, Kong starts rejecting requests
+        policy: local is fine for a basic single-node/small-class lab
+
+Phase 3 — Attach the Plugin
+
+You can attach plugins to an Ingress, Service, HTTPRoute, KongConsumer, or other supported resources using konghq.com/plugins. For this lab, attaching it to the Ingress keeps the mental model simple.
+
+Apply Rate_Limit_Ingress.yaml
+
+
 
