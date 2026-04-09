@@ -74,5 +74,17 @@ Apply API Key Cred: https://github.com/BalericaAI/kubernetesclass/blob/main/Proj
 
     kubectl apply -f chewbacca_key.yaml
 
+Phase 6 — Test With API Key
+
+curl http://<KONG>/hello -H "apikey: super-secret-key"
+What happens?
+
+Let's verify 
+
+        kubectl get kongplugin
+        kubectl get kongconsumer
+        kubectl get kongcredential
+        kubectl describe ingress hello-ingress
+
 
 
