@@ -1,0 +1,38 @@
+Deliverables
+
+Students submit:
+
+1. Evidence
+curl without key → 401
+curl with key → 200
+
+2. YAML
+KongPlugin
+KongConsumer
+KongCredential
+
+3. Explanation
+
+Question:  “Where is authentication enforced?”
+
+Correct answer: “At the Kong gateway, before traffic reaches the service.”
+
+
+Reflection:
+
+    Why is this better than coding auth inside every app?
+    What happens if you have 50 microservices?
+    What team would own Kong in a company?
+
+
+Real-World Mapping
+
+This maps directly to:
+
+| Concept            | Real Job Role     |
+| ------------------ | ----------------- |
+| Kong plugin config | Platform Engineer |
+| API authentication | Security Engineer |
+| consumer identity  | IAM Engineer      |
+
+
