@@ -1,0 +1,9 @@
+allow {
+  input.user == "chewbacca"
+  input.path == "/falcon"
+}
+
+allow {
+  input.user == "darth-malgus"
+  input.path == "/lindworm"
+}
