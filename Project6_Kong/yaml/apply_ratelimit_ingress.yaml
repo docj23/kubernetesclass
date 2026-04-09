@@ -1,0 +1,20 @@
+#Apply this to your Kong Ingress YAML!!!! 
+
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+  annotations:
+    konghq.com/plugins: my-rate-limiting-plugin # Reference name here
+spec:
+  ingressClassName: kong
+  rules:
+  - http:
+      paths:
+      - path: /
+        backend:
+          service:
+            name: my-service
+            port:
+              number: 80
