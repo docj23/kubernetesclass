@@ -50,3 +50,11 @@ Phase 4 — Expose the app through Kong with Ingress
 
 Example Ingress:
 
+Kong Ingress: https://github.com/BalericaAI/kubernetesclass/blob/main/Project5_Kong/yaml/kong_helloingress.yaml
+
+Expected result:
+
+        Hello from Kong Lab 1
+
+KIC documentation explains that it processes Kubernetes resources marked for its ingress class and translates them into Kong configuration.
+
