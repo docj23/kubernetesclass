@@ -1,0 +1,36 @@
+Failure Injection
+
+Now the fun part.
+
+Failure A — Limit Too Low
+
+Set:
+config:
+  minute: 1
+
+What happens?
+
+Failure B — Plugin Not Attached
+
+Create the KongPlugin, but forget: --> konghq.com/plugins: rate-limit-plugin
+
+What happens?
+
+Failure C — Wrong Target Resource
+
+Attach rate limiting somewhere unexpected or incorrectly.
+
+Failure D — Student Confuses Auth Failure with Rate Limit Failure
+
+You forget the API key and see:
+
+    401 Unauthorized
+
+Then later with a valid key they get:
+
+    429 Too Many Requests
+
+Lesson:
+
+identity failure and quota failure are different states
+
