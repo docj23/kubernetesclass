@@ -6,6 +6,24 @@ Kong Gateway
   |
   |  Auth Plugin (key-auth)
   |  (optional rate limiting)
+1)
+-------------------------
+| Namespace: falcon      |
+|  Service (port 12000)  |
+|  Pods                  |
+-------------------------
+        |
+        v
+      OPA (policy check)
+2) 
+-------------------------
+| Namespace: lindworm    |
+|  Service (port 3653)   |
+|  Pods                  |
+-------------------------
+        |
+        v
+      OPA (policy check)
   v
 Service (falcon / lindworm)
   |
