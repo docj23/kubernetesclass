@@ -52,3 +52,22 @@ curl http://<KONG>/hello
 or
 curl http://<KONG>/hello -H "apikey: super-secret-key"
 
+
+Phase 1 — Rate Limiting Purpose
+
+Let's think..... Why rate limiting exists
+        protect services from accidental floods
+        reduce damage from abusive clients
+        preserve application availability
+        create predictable API behavior
+
+Kong describes rate limiting as controlling how many requests a client can make within a specified period, and frames it as a core availability and traffic-control function
+
+
+Phase 2 — Create the Rate Limiting Plugin
+
+For the first version, keep it simple:
+
+rate-limit-plugin.yaml: 
+
+
