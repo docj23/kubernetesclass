@@ -1,0 +1,15 @@
+Students should submit:
+
+1. YAML
+KongPlugin for rate limiting
+updated Ingress annotation
+
+2. Evidence
+successful low-volume requests
+flood evidence showing 429 Too Many Requests
+
+3. Short explanation
+
+Answer this: --> Where is request throttling enforced?
+
+Correct answer:--> At Kong, before the upstream Kubernetes service handles the request.
