@@ -104,9 +104,32 @@ allow {
   input.path == "/lindworm"
 }
 
+Now the real enforcement layer.
+
+We enforce:
+
+falcon namespace → only port 12000 allowed
+lindworm namespace → only port 3653 allowed
+
 
 OPA Constraint Template: https://github.com/BalericaAI/kubernetesclass/blob/main/Project8_OPA_Kong/OPA/opa_constraint_ports.yaml
-OPA Constraint Ports: 
+OPA Constraint Ports: https://github.com/BalericaAI/kubernetesclass/blob/main/Project8_OPA_Kong/OPA/opa_constraint_ports.yaml
 
+Phase 5 — Kong Layer (Still Required)
 
+Students must:
 
+        expose /falcon → falcon namespace service
+        expose /lindworm → lindworm namespace service
+
+Then:
+
+        apply API key auth
+        map:
+        chewbacca → falcon
+        darth malgus → lindworm
+
+Test it!!!
+
+curl http://<KONG>/falcon -H "apikey: wookie-power"
+curl http://<KONG>/lindworm -H "apikey: sith-control"
