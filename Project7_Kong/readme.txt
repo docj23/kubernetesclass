@@ -121,4 +121,9 @@ k6 is an open-source load-testing tool designed for running scripted HTTP load t
 rate-test.js            https://github.com/BalericaAI/kubernetesclass/blob/main/Project7_Kong/javascript/rate-test.js
 key_rate-test.js        https://github.com/BalericaAI/kubernetesclass/blob/main/Project7_Kong/javascript/key_rate-test.js
 
+Run it!
 
+k6 run rate-test.js
+k6 run key_rate-test.js
+
+What happens?
