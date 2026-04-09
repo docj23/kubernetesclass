@@ -45,7 +45,7 @@ If violated:--->  Request must be denied.  No Lizzo banana for YOU!
 
 Stage 0: Namespaces
 
-Deploy namespaces.yaml 
+Deploy namespaces.yaml https://github.com/BalericaAI/kubernetesclass/blob/main/Project8_OPA_Kong/yaml/namespaces.yaml
 
 Deploy Apps into Correct Namespaces
 
