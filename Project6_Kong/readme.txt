@@ -50,3 +50,8 @@ Phase 2 — Enable API Key Authentication
 
 
 Apply Plugin to Ingress
+
+
+Attach to this file: https://github.com/BalericaAI/kubernetesclass/blob/main/Project5_Kong/yaml/kong_helloingress.yaml
+
+
