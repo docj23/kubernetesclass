@@ -55,6 +55,14 @@ Attach this yaml: https://github.com/BalericaAI/kubernetesclass/blob/main/Projec
 to this file: https://github.com/BalericaAI/kubernetesclass/blob/main/Project5_Kong/yaml/kong_helloingress.yaml
 
 
+Phase 3 — Test (Should Fail)
+
+Verify: curl http://<KONG>/hello
+
+What happened?
+
+Phase 4 — Give Chewbacca Access
+
 
 
 
