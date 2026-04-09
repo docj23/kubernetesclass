@@ -119,6 +119,6 @@ Phase 6 — Use k6 for a Realer Flood
 k6 is an open-source load-testing tool designed for running scripted HTTP load tests, and its docs walk through writing a simple test script and running it locally.
 
 rate-test.js            https://github.com/BalericaAI/kubernetesclass/blob/main/Project7_Kong/javascript/rate-test.js
-key_rate-test.js
+key_rate-test.js        https://github.com/BalericaAI/kubernetesclass/blob/main/Project7_Kong/javascript/key_rate-test.js
 
 
